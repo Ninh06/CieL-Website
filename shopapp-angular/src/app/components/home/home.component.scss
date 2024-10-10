@@ -1,0 +1,186 @@
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.product-category {
+    width: 200px;
+    background-color: white(19, 23, 42);
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.product-category:focus {
+    background-color: white;
+    color: black;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+.product-category option {
+    background-color: white;
+    color: black;
+}
+
+.search-input {
+    width: 300px;
+    background-color: rgb(19, 23, 42);
+    margin-right: 10px;
+    border-color: rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
+.form-control {
+    background-color: transparent;
+    color: black;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.product-item {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bóng mờ ban đầu */
+}
+
+.product-item:hover {
+    transform: translateY(-10px); /* Tăng khoảng cách lên để sản phẩm nổi bật hơn */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Tăng độ mờ khi hover */
+}
+
+
+.product-image {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Tăng chiều cao tối đa của ảnh */
+    object-fit: contain; /* Đảm bảo ảnh không bị biến dạng */
+    margin-bottom: 10px;
+}
+
+.product-name {
+    color: black;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: black;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color: rgb(255, 0, 0);
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.page-navigation {
+    margin-top: 20px;
+}
+
+.pagination .page-link {
+    color: black;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.pagination .page-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+
+.banner-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  .btn-search {
+    margin-left: 10px;
+    background-color: rgb(151, 148, 148);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%
+    
+    i {
+        font-size: 24px; 
+    }
+  
+    &:hover {
+      background-color: rgb(117, 115, 115); 
+    }
+  }
+  .form-control::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}

@@ -1,0 +1,127 @@
+.container-fluid {
+    padding: 20px;
+    overflow-x: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #4A90E2;
+}
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+
+    .search-input {
+        width: 300px;
+    }
+
+    .btn-primary {
+        padding: 6px 12px;
+        font-size: 1rem;
+        border-radius: 5px;
+        background-color: #4A90E2;
+        border: none;
+        color: #fff;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #3b7fbd;
+        }
+    }
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
+    border-collapse: separate;
+    background-color: #fff;
+    min-width: 1200px; 
+
+    th, td {
+        text-align: center;
+        padding: 10px;
+        font-size: 1rem;
+        white-space: nowrap; 
+    }
+
+    th {
+        background-color: #f8f9fa;
+        color: #343a40;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .d-flex {
+        justify-content: center;
+        gap: 10px;
+
+        button {
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+            &:hover {
+                background-color: #4A90E2;
+                color: #fff;
+            }
+        }
+
+        .btn-primary {
+            background-color: #4A90E2;
+            border: none;
+
+            &:hover {
+                background-color: #3b7fbd;
+            }
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border: none;
+
+            &:hover {
+                background-color: #bd2130;
+            }
+        }
+    }
+}
+
+.page-navigation {
+    margin-top: 20px;
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+
+        .page-item {
+            margin: 0 5px;
+
+            &.active .page-link {
+                background-color: #4A90E2;
+                border-color: #4A90E2;
+                color: #fff;
+            }
+
+            .page-link {
+                color: #4A90E2;
+                border: 1px solid #4A90E2;
+                padding: 10px 15px;
+                font-size: 1rem;
+                border-radius: 5px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+
+                &:hover {
+                    background-color: #4A90E2;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.introduce-section {
+    background-color: #f7f7f7;
+    padding: 50px 0;
+  
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      margin-bottom: 150px;
+    }
+  
+    .intro-text {
+      max-width: 600px;
+  
+      h1 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 18px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 15px;
+  
+        strong {
+          color: #c02942;
+        }
+      }
+    }
+  
+    .intro-image {
+      img {
+        margin-left: 80px;
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+  

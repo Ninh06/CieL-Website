@@ -1,0 +1,129 @@
+.container {
+    color: black;
+    height: 100vh;
+    margin: 50px auto; /* Căn giữa container */
+}
+
+.row {
+    height: 100%;
+}
+
+.image-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.side-image {
+    max-width: 100%;
+    height: auto; /* Điều chỉnh chiều cao hình ảnh để giữ tỷ lệ */
+}
+
+.register-form {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin: auto; /* Căn giữa form */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.col-md-6 {
+    max-width: 100%; /* Đảm bảo cột chiếm toàn bộ chiều rộng */
+}
+
+.register-header {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-control {
+    background-color: #fbfcf7;
+    border: 1px solid #ccc;
+    color: black;
+}
+
+.form-control:focus {
+    color: black;
+    background-color: #fffcf7;
+    outline: none;
+    box-shadow: none;
+    border-color: #bbb;
+    padding-left: 0;
+}
+
+.password-field {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: black;
+    cursor: pointer;
+}
+
+.checkbox-text {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.register-button {
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 20px;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.register-button:hover {
+    background-color: #5a6268;
+    color: white;
+    cursor: pointer;
+}
+
+.register-button:focus {
+    outline: 2px solid #343a40;
+    outline-offset: 2px;
+}
+
+.divider {
+    height: 1px;
+    background-color: rgb(0, 0, 0);
+    margin: 20px;
+}
+
+.divider-nospace {
+    border-top: 1px solid white;
+}
+
+.form-control::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper .form-control {
+    flex: 1;
+}

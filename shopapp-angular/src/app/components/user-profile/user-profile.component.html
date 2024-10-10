@@ -1,0 +1,85 @@
+<app-header></app-header>
+<form [formGroup]="userProfileForm">
+<div class="row">
+    <div class="col-md-3 mx-auto">
+        <h2 class="product-header">Thông tin người dùng</h2>
+        <div class="mb-3">
+            <label for="full_name" class="form-label">Họ và tên</label>
+            <input type="text"
+                formControlName="full_name"
+                name="full_name"
+                class="form-control"
+                id="full_name"
+                [class.is-invalid]="userProfileForm.get('full_name')!.invalid && userProfileForm.get('full_name')!.touched">
+            <div
+                *ngIf="userProfileForm.get('full_name')!.invalid && userProfileForm.get('full_name')!.touched"
+                class="invalid-feedback">
+                Họ và tên là trường bắt buộc.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Địa chỉ</label>
+            <input type="text"
+                formControlName="address"
+                name="address"
+                placeholder="Số điện thoại" 
+                class="form-control" id="address">
+        </div>
+        <!-- <div class="mb-3">
+            <label for="phone_number" class="form-label">Số điện thoại</label>
+            <input type="text"
+                formControlName="phone_number"
+                name="phone_number"
+                placeholder="Số điện thoại" 
+                class="form-control" id="phone_number"
+                [class.is-invalid]="userProfileForm.get('phone_number')!.invalid && userProfileForm.get('phone_number')!.touched">
+            <div
+                *ngIf="userProfileForm.get('phone_number')!.invalid && userProfileForm.get('phone_number')!.touched"
+                class="invalid-feedback">
+                Số điện thoại là trường bắt buộc.
+            </div>
+        </div> -->
+        <div class="mb-3">
+            <label for="date_of_birth" class="form-label">Ngày sinh</label>
+            <input type="date"
+                formControlName="date_of_birth"
+                name="date_of_birth"
+                class="form-control" id="date_of_birth">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Mật khẩu</label>
+            <input type="password"
+                formControlName="password"
+                name="password"
+                class="form-control"
+                placeholder="Mật khẩu" 
+                id="password"
+                [class.is-invalid]="userProfileForm.get('password')!.invalid && userProfileForm.get('password')!.touched">
+            <div
+                *ngIf="userProfileForm.get('password')!.invalid && userProfileForm.get('password')!.touched"
+                class="invalid-feedback">
+                Mật khẩu là trường bắt buộc.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="retype_password" class="form-label">Nhập lại mật khẩu</label>
+            <input type="password"
+                formControlName="retype_password"
+                name="retype_password"
+                class="form-control"
+                placeholder="Nhập lại mật khẩu" 
+                id="retype_password"
+                [class.is-invalid]="userProfileForm.get('retype_password')!.invalid && userProfileForm.get('retype_password')!.touched">
+            <div
+                *ngIf="userProfileForm.get('retype_password')!.invalid && userProfileForm.get('retype_password')!.touched"
+                class="invalid-feedback">
+                Nhập lại mật khẩu là trường bắt buộc.
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <button type="button" class="btn btn-save" (click)="save()">Lưu thay đổi</button>
+    </div>
+</div>
+</form>
+<app-footer></app-footer>

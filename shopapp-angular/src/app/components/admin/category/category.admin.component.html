@@ -1,0 +1,120 @@
+<!-- Modal Tạo Mới Loại Sản Phẩm -->
+<ng-template #createCategoryModal let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Tạo mới loại sản phẩm</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form #createCategoryForm="ngForm">
+            <div class="mb-3">
+                <label for="categoryName" class="form-label">Tên loại sản phẩm</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="categoryName" 
+                    [(ngModel)]="newCategoryName" 
+                    name="categoryName"
+                    required 
+                />
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Close click')">Đóng</button>
+        <button type="button" class="btn btn-primary" (click)="createCategory()">Tạo mới</button>
+    </div>
+</ng-template>
+
+<!-- Search Box -->
+<div class="search-box d-flex justify-content-center mb-4">
+    <input 
+        type="text" 
+        class="form-control search-input"
+        placeholder="Tìm kiếm danh mục"
+        [(ngModel)]="keyword"
+        (keyup.enter)="searchCategories()" 
+    />
+    <button class="btn btn-primary ml-2" (click)="searchCategories()">Tìm kiếm</button>
+    <button class="btn btn-new mb-3" (click)="openCreateModal(createCategoryModal)">Tạo mới loại sản phẩm</button>
+</div>
+
+<!-- Danh Sách Loại Sản Phẩm -->
+<div class="container-fluid">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên loại sản phẩm</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categories">
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>
+                    <div class="d-flex justify-content-start">
+                        <button 
+                            class="btn btn-primary mr-2"
+                            (click)="openEditModal(category)">
+                            Sửa đổi
+                        </button>
+                        <button class="btn btn-danger" (click)="deleteCategory(category.id)">Xóa</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal Chỉnh Sửa Loại Sản Phẩm -->
+<ng-template #editCategoryModal let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Chỉnh sửa loại sản phẩm</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form #editCategoryForm="ngForm">
+            <div class="mb-3">
+                <label for="editCategoryName" class="form-label">Tên loại sản phẩm</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="editCategoryName" 
+                    [(ngModel)]="updatedCategoryName" 
+                    name="editCategoryName"
+                    required 
+                />
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Close click')">Đóng</button>
+        <button type="button" class="btn btn-primary" (click)="updateCategory()">Cập nhật</button>
+    </div>
+</ng-template>
+
+<!-- Phân Trang -->
+<div class="d-flex justify-content-center page-navigation">
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item" *ngIf="currentPage > 0">
+                <a class="page-link" (click)="onPageChange(1)">Đầu tiên</a>
+            </li>
+            <li class="page-item" *ngIf="currentPage > 0">
+                <a class="page-link" (click)="onPageChange(currentPage)">Trước</a>
+            </li>
+            <ng-container *ngFor="let page of visiblePages">
+                <li class="page-item" [ngClass]="{'active': page === (currentPage + 1)}">
+                    <a class="page-link" (click)="onPageChange(page)">{{ page }}</a>
+                </li>
+            </ng-container>
+            <li class="page-item" *ngIf="currentPage < totalPages - 1">
+                <a class="page-link" (click)="onPageChange(currentPage + 2)">Tiếp</a>
+            </li>
+            <li class="page-item" *ngIf="currentPage < totalPages - 1">
+                <a class="page-link" (click)="onPageChange(totalPages)">Cuối cùng</a>
+            </li>
+        </ul>
+    </nav>
+</div>

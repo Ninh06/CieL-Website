@@ -1,0 +1,53 @@
+.container {
+    color: white;
+
+}
+
+.product-header {
+    color: black;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+.form-control {
+    background-color: #fbfcf7;
+    border: 1px solid gray;
+    color: black;
+}
+
+.form-control:focus {
+    border-color: gray;
+    background-color: #fbfcf7;
+}
+
+.form-label {
+    color: black;
+}
+
+.product-order {
+    color: rgb(0, 0, 0);
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+.btn-save {
+    background-color: #6c757d; 
+    color: white;
+    border: 1px solid #5a6268; 
+    transition: background-color 0.3s, color 0.3s; 
+    margin-bottom: 60px;
+}
+
+.btn-save:hover {
+    background-color: #5a6268; 
+    color: white; 
+    cursor: pointer; 
+}
+
+.btn-save:focus {
+    outline: 2px solid #343a40; 
+    outline-offset: 2px; 
+}

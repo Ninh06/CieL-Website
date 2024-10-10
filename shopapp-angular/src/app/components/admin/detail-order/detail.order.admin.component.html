@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <!-- Thông tin Đơn hàng -->
+        <div class="col-md-6">
+            <h3>Thông tin Order:</h3>
+            <p><strong>ID Đơn hàng:</strong> {{orderResponse.id}}</p>
+            <p><strong>ID Khách hàng:</strong> {{orderResponse.user_id}}</p>
+            <p><strong>Họ tên:</strong> {{orderResponse.full_name}}</p>
+            <p><strong>Số điện thoại:</strong> {{orderResponse.phone_number}}</p>
+            <p><strong>Địa chỉ:</strong> {{orderResponse.address}}</p>
+            <p><strong>Ghi chú:</strong> {{orderResponse.note}}</p>
+            <p><strong>Ngày đặt hàng:</strong> {{orderResponse.order_date | date}}</p>
+
+            <div class="form-group">
+                <label for="statusSelect"><strong>Trạng thái đơn hàng:</strong></label>
+                <select 
+                    [value]="orderResponse.status" 
+                    (change)="handleChangeStatus()" 
+                    class="form-control" 
+                    id="statusSelect" 
+                    [(ngModel)]="orderResponse.status">
+                    <option value="pending">Chưa xử lý</option>
+                    <option value="processing">Đã xử lý</option>
+                    <option value="shipped">Đang giao hàng</option>
+                    <option value="delivered">Đã giao hàng</option>
+                    <option value="cancelled">Hủy đơn</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Chi tiết Đơn hàng -->
+        <div class="col-md-12">
+            <h3>Chi tiết đơn hàng:</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Tổng tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order_detail of orderResponse.order_details; let i = index">
+                        <td>
+                            <div class="product-info">
+                                <span class="product-name">{{ order_detail.product.name }}</span>
+                            </div>
+                        </td>
+                        <td>{{ order_detail.numberOfProducts }}</td> <!-- Sử dụng order_detail.quantity -->
+                        <td>{{ order_detail.product.price | number: '1.2-2' }}</td>
+                        <td>{{ (order_detail.product.price * order_detail.numberOfProducts) | number: '1.2-2' }}</td> <!-- Tính tổng tiền -->
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-start mt-3">
+                <h4 class="header-text text-end">Tổng giá: {{ orderResponse.total_money | number: '1.2-2' }}</h4>
+            </div>
+        </div>
+
+        <!-- Nút Lưu -->
+        <button class="btn btn-primary col-md-2" (click)="saveOrder()">Lưu</button>
+    </div>
+</div>
